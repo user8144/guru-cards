@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KM Guru Cards — Theme 1</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f4f0;
+    color: #1a1a18;
+    padding: 1.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  h1 { font-size: 13px; font-weight: 500; color: #888780; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .card { background: #ffffff; border: 0.5px solid rgba(0,0,0,0.1); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+  .section-label { font-size: 11px; font-weight: 500; color: #888780; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; padding-left: 2px; }
+
+  /* DEFINITION */
+  .def-hero { font-size: 30px; font-weight: 500; color: #1a1a18; margin-bottom: 4px; }
+  .def-plain { font-size: 14px; color: #5f5e5a; margin-bottom: 1.25rem; }
+  .data-flow { display: flex; align-items: center; gap: 0; }
+  .df-step { text-align: center; flex: 1; }
+  .df-box { padding: 8px 6px; border-radius: 8px; font-size: 12px; font-weight: 500; }
+  .df-sub { font-size: 11px; color: #888780; margin-top: 4px; }
+  .df-arrow { font-size: 16px; color: #b4b2a9; padding: 0 2px; flex: 0; }
+  .df-data { background: #E6F1FB; color: #0C447C; }
+  .df-info { background: #EEEDFE; color: #3C3489; }
+  .df-know { background: #E1F5EE; color: #085041; }
+
+  /* ATTRIBUTES */
+  .attr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+  .attr-pill { background: #f5f4f0; border-radius: 8px; padding: 8px 10px; }
+  .attr-name { font-size: 12px; font-weight: 500; color: #1a1a18; margin-bottom: 2px; }
+  .attr-desc { font-size: 11px; color: #5f5e5a; line-height: 1.35; }
+  .expand-btn { margin-top: 8px; width: 100%; font-size: 12px; color: #534AB7; background: #EEEDFE; border: none; border-radius: 8px; padding: 9px; cursor: pointer; font-family: inherit; font-weight: 500; }
+  .expand-btn:hover { background: #CECBF6; }
+  .hidden-attrs { display: none; }
+  .hidden-attrs.open { display: contents; }
+
+  /* SECI */
+  .seci-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seci-box { border-radius: 10px; padding: 12px 14px; }
+  .seci-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; display: inline-block; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px; }
+  .seci-t { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .seci-sub { font-size: 11px; margin-bottom: 7px; opacity: 0.75; }
+  .seci-ex { font-size: 11px; opacity: 0.85; border-left: 2px solid; padding-left: 8px; line-height: 1.4; }
+
+  /* ROLES */
+  .role-row { display: flex; align-items: stretch; gap: 10px; margin-bottom: 8px; }
+  .role-spine { width: 24px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .role-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 12px; }
+  .role-line { width: 2px; flex: 1; margin-top: 3px; }
+  .role-card { flex: 1; background: #f5f4f0; border-radius: 8px; padding: 10px 12px; }
+  .role-title { font-size: 13px; font-weight: 500; color: #1a1a18; }
+  .role-cert { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 8px; margin-left: 5px; vertical-align: middle; }
+  .role-desc { font-size: 11px; color: #5f5e5a; margin-top: 3px; line-height: 1.4; }
+
+  /* CHANGE MGMT */
+  .cm-def { font-size: 13px; color: #1a1a18; line-height: 1.6; border-left: 3px solid #534AB7; padding-left: 12px; margin-bottom: 1rem; }
+  .cm-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cm-pill { background: #EEEDFE; color: #3C3489; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
+
+  /* BULLS & SQUIRRELS */
+  .bs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bs-box { border-radius: 10px; padding: 14px; }
+  .bs-label { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .bs-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .bs-desc { font-size: 12px; line-height: 1.5; }
+
+  /* KM DEFINITION */
+  .km-split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
+  .km-type { border-radius: 10px; padding: 12px; }
+  .km-type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .km-type-desc { font-size: 12px; line-height: 1.4; }
+  .km-wiifm { margin-top: 0.5rem; }
+  .km-wiifm-label { font-size: 11px; font-weight: 600; color: #888780; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .wiifm-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+  .wiifm-who { font-size: 11px; font-weight: 600; background: #f5f4f0; border-radius: 6px; padding: 3px 8px; white-space: nowrap; color: #5f5e5a; margin-top: 1px; }
+  .wiifm-what { font-size: 12px; color: #1a1a18; line-height: 1.4; }
+
+  /* MATURITY */
+  .mat-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .mat-num { width: 28px; height: 28px; border-radius: 50%; background: #EEEDFE; color: #534AB7; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .mat-text { font-size: 13px; color: #1a1a18; }
+  .mat-sub { font-size: 11px; color: #888780; }
+</style>
+</head>
+<body>
+
+<h1>KM Guru Cards — Theme 1</h1>
+
+<!-- KNOWLEDGE DEFINITION -->
+<div class="section-label">Definition</div>
+<div class="card">
+  <div class="def-hero">Knowledge</div>
+  <div class="def-plain">Understanding gained from experience. Derived from data and information — drives decisions and action.</div>
+  <div class="data-flow">
+    <div class="df-step"><div class="df-box df-data">Data</div><div class="df-sub">Raw facts</div></div>
+    <div class="df-arrow">→</div>
+    <div class="df-step"><div class="df-box df-info">Information</div><div class="df-sub">Structured data</div></div>
+    <div class="df-arrow">→</div>
+    <div class="df-step"><div class="df-box df-know">Knowledge</div><div class="df-sub">Drives action</div></div>
+  </div>
+</div>
+
+<!-- KNOWLEDGE ATTRIBUTES -->
+<div class="section-label">Knowledge attributes — 25 total</div>
+<div class="card">
+  <div class="attr-grid">
+    <div class="attr-pill"><div class="attr-name">Modes</div><div class="attr-desc">Tacit or explicit</div></div>
+    <div class="attr-pill"><div class="attr-name">Perishability</div><div class="attr-desc">Shelf life before obsolescence</div></div>
+    <div class="attr-pill"><div class="attr-name">Validity</div><div class="attr-desc">Accuracy and consistency</div></div>
+    <div class="attr-pill"><div class="attr-name">Velocity</div><div class="attr-desc">Speed through the org</div></div>
+    <div class="attr-pill"><div class="attr-name">Viscosity</div><div class="attr-desc">Quality of absorption</div></div>
+    <div class="attr-pill"><div class="attr-name">Volatility</div><div class="attr-desc">Subject to change</div></div>
+    <div class="attr-pill"><div class="attr-name">Relevance</div><div class="attr-desc">Pertinent to the problem</div></div>
+    <div class="attr-pill"><div class="attr-name">Actionability</div><div class="attr-desc">Enables action or not</div></div>
+    <div class="hidden-attrs" id="more-attrs">
+      <div class="attr-pill"><div class="attr-name">Age</div><div class="attr-desc">New/emerging vs. conventional wisdom</div></div>
+      <div class="attr-pill"><div class="attr-name">Applicability</div><div class="attr-desc">Universal or context-specific</div></div>
+      <div class="attr-pill"><div class="attr-name">Clarity</div><div class="attr-desc">Amount of interpretation needed</div></div>
+      <div class="attr-pill"><div class="attr-name">Domain</div><div class="attr-desc">Subject area of the knowledge</div></div>
+      <div class="attr-pill"><div class="attr-name">Flows</div><div class="attr-desc">Transfer between knowledge stocks</div></div>
+      <div class="attr-pill"><div class="attr-name">Importance</div><div class="attr-desc">Pertinence to high-value problems</div></div>
+      <div class="attr-pill"><div class="attr-name">Location</div><div class="attr-desc">Proximity to need (in space)</div></div>
+      <div class="attr-pill"><div class="attr-name">Meaningfulness</div><div class="attr-desc">Accurately interpreted</div></div>
+      <div class="attr-pill"><div class="attr-name">Measurability</div><div class="attr-desc">Amount, quality, cost metrics</div></div>
+      <div class="attr-pill"><div class="attr-name">Practicality</div><div class="attr-desc">Speed, accuracy, satisfaction</div></div>
+      <div class="attr-pill"><div class="attr-name">Proficiency</div><div class="attr-desc">Level of expertise</div></div>
+      <div class="attr-pill"><div class="attr-name">Relevance</div><div class="attr-desc">No irrelevant knowledge = no overload</div></div>
+      <div class="attr-pill"><div class="attr-name">Stocks</div><div class="attr-desc">Inventory of knowledge</div></div>
+      <div class="attr-pill"><div class="attr-name">States</div><div class="attr-desc">Data to decision, data to wisdom</div></div>
+      <div class="attr-pill"><div class="attr-name">Source</div><div class="attr-desc">Origin — validate or seek clarity</div></div>
+      <div class="attr-pill"><div class="attr-name">Types</div><div class="attr-desc">Descriptive, procedural, reasoning</div></div>
+      <div class="attr-pill"><div class="attr-name">Usability</div><div class="attr-desc">Degree of value in representations</div></div>
+      <div class="attr-pill"><div class="attr-name">Utility</div><div class="attr-desc">Varies by clarity, meaning, relevance</div></div>
+    </div>
+  </div>
+  <button class="expand-btn" id="expand-btn" onclick="toggleAttrs()">+ Show all 25 attributes</button>
+</div>
+
+<!-- KM DEFINITION -->
+<div class="section-label">Knowledge management</div>
+<div class="card">
+  <div class="km-split">
+    <div class="km-type" style="background:#EEEDFE;">
+      <div class="km-type-label" style="color:#534AB7;">Explicit</div>
+      <div class="km-type-desc" style="color:#3C3489;">Tangible. Captured, stored, and easily shared.</div>
+    </div>
+    <div class="km-type" style="background:#E1F5EE;">
+      <div class="km-type-label" style="color:#0F6E56;">Tacit</div>
+      <div class="km-type-desc" style="color:#085041;">In employees' minds. Experiential. Learned by doing.</div>
+    </div>
+  </div>
+  <div class="km-wiifm">
+    <div class="km-wiifm-label">WIIFM — who's asking?</div>
+    <div class="wiifm-row">
+      <div class="wiifm-who">CEO</div>
+      <div class="wiifm-what">Strategic org-wide initiative. Improves performance and the bottom line.</div>
+    </div>
+    <div class="wiifm-row">
+      <div class="wiifm-who">Employee</div>
+      <div class="wiifm-what">Makes life easier. Reduces inefficiencies, frees up time, lets them focus on their core role.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHANGE MANAGEMENT -->
+<div class="section-label">Change management</div>
+<div class="card">
+  <div class="cm-def">Deliberate process of building org readiness, awareness, and cultural buy-in through small quick wins before scaling — ensuring people are prepared to adopt new ways of working before significant resources are committed.</div>
+  <div class="cm-pills">
+    <span class="cm-pill">Build readiness first</span>
+    <span class="cm-pill">Quick wins = momentum</span>
+    <span class="cm-pill">Cultural buy-in</span>
+    <span class="cm-pill">Then scale</span>
+  </div>
+</div>
+
+<!-- SECI MODEL -->
+<div class="section-label">SECI model — knowledge conversion</div>
+<div class="card">
+  <div class="seci-grid">
+    <div class="seci-box" style="background:#EEEDFE;">
+      <div class="seci-tag" style="background:#CECBF6;color:#26215C;">Tacit → Tacit</div>
+      <div class="seci-t" style="color:#26215C;">Socialization</div>
+      <div class="seci-sub" style="color:#534AB7;">Shared experience</div>
+      <div class="seci-ex" style="border-color:#AFA9EC;color:#3C3489;">Mentor working alongside mentee</div>
+    </div>
+    <div class="seci-box" style="background:#E1F5EE;">
+      <div class="seci-tag" style="background:#9FE1CB;color:#04342C;">Tacit → Explicit</div>
+      <div class="seci-t" style="color:#04342C;">Externalization</div>
+      <div class="seci-sub" style="color:#0F6E56;">Documenting what you know</div>
+      <div class="seci-ex" style="border-color:#5DCAA5;color:#085041;">Creating a Guru card</div>
+    </div>
+    <div class="seci-box" style="background:#FAEEDA;">
+      <div class="seci-tag" style="background:#FAC775;color:#412402;">Explicit → Explicit</div>
+      <div class="seci-t" style="color:#412402;">Combination</div>
+      <div class="seci-sub" style="color:#854F0B;">Synthesizing sources</div>
+      <div class="seci-ex" style="border-color:#EF9F27;color:#633806;">Merging docs into a repository</div>
+    </div>
+    <div class="seci-box" style="background:#FAECE7;">
+      <div class="seci-tag" style="background:#F5C4B3;color:#4A1B0C;">Explicit → Tacit</div>
+      <div class="seci-t" style="color:#4A1B0C;">Internalization</div>
+      <div class="seci-sub" style="color:#993C1D;">Learning by doing</div>
+      <div class="seci-ex" style="border-color:#F0997B;color:#712B13;">Using a Guru card, building your own experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- MATURITY MODELS -->
+<div class="section-label">Maturity models</div>
+<div class="card">
+  <div style="font-size:13px;color:#5f5e5a;margin-bottom:1rem;">Ways to measure org growth and transformation — ensuring ongoing improvement. KM is an ongoing, maturity-driven process.</div>
+  <div class="mat-row"><div class="mat-num">1</div><div><div class="mat-text">Initial / Ad hoc</div><div class="mat-sub">No formal KM. Knowledge siloed.</div></div></div>
+  <div class="mat-row"><div class="mat-num">2</div><div><div class="mat-text">Developing</div><div class="mat-sub">Some processes. Inconsistent adoption.</div></div></div>
+  <div class="mat-row"><div class="mat-num">3</div><div><div class="mat-text">Defined</div><div class="mat-sub">Documented KM strategy. Org-wide awareness.</div></div></div>
+  <div class="mat-row"><div class="mat-num">4</div><div><div class="mat-text">Managed</div><div class="mat-sub">Measured KM outcomes. Continuous improvement.</div></div></div>
+  <div class="mat-row"><div class="mat-num">5</div><div><div class="mat-text">Optimizing</div><div class="mat-sub">KM embedded in culture. Strategic competitive advantage.</div></div></div>
+</div>
+
+<!-- KM ROLES -->
+<div class="section-label">KM roles — from worker to CKO</div>
+<div class="card">
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#534AB7;"></div><div class="role-line" style="background:#CECBF6;"></div></div>
+    <div class="role-card"><div class="role-title">Chief Knowledge Officer <span class="role-cert" style="background:#EEEDFE;color:#534AB7;">CKO</span></div><div class="role-desc">Creates KM vision, secures exec buy-in, champions budget and culture</div></div>
+  </div>
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#0F6E56;"></div><div class="role-line" style="background:#9FE1CB;"></div></div>
+    <div class="role-card"><div class="role-title">KM Manager <span class="role-cert" style="background:#E1F5EE;color:#0F6E56;">CKM</span></div><div class="role-desc">Transitions KM from tactical startup to funded strategic program</div></div>
+  </div>
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#854F0B;"></div><div class="role-line" style="background:#FAC775;"></div></div>
+    <div class="role-card"><div class="role-title">Knowledge Specialist <span class="role-cert" style="background:#FAEEDA;color:#854F0B;">CKS</span></div><div class="role-desc">Deep SME brought in once a KM Bull is selected</div></div>
+  </div>
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#A32D2D;"></div><div class="role-line" style="background:#F7C1C1;"></div></div>
+    <div class="role-card"><div class="role-title">KM Practitioner <span class="role-cert" style="background:#FCEBEB;color:#A32D2D;">CKP</span></div><div class="role-desc">Runs day-to-day KM activities, drives grassroots startup</div></div>
+  </div>
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#5f5e5a;"></div><div class="role-line" style="background:#D3D1C7;"></div></div>
+    <div class="role-card"><div class="role-title">KM Instructor</div><div class="role-desc">Designs and delivers the change management and training plan</div></div>
+  </div>
+  <div class="role-row">
+    <div class="role-spine"><div class="role-dot" style="background:#b4b2a9;"></div></div>
+    <div class="role-card"><div class="role-title">Knowledge Worker</div><div class="role-desc">Everyone. Creates, shares, or applies knowledge through daily work</div></div>
+  </div>
+</div>
+
+<!-- BULLS & SQUIRRELS -->
+<div class="section-label">Bulls vs squirrels</div>
+<div class="card">
+  <div class="bs-grid">
+    <div class="bs-box" style="background:#FAECE7;">
+      <div class="bs-label" style="color:#993C1D;">Bull</div>
+      <div class="bs-title" style="color:#4A1B0C;">Enterprise-wide</div>
+      <div class="bs-desc" style="color:#712B13;">Large initiative requiring time, resources, and funding. High impact, high change across the org.</div>
+    </div>
+    <div class="bs-box" style="background:#EAF3DE;">
+      <div class="bs-label" style="color:#3B6D11;">Squirrel</div>
+      <div class="bs-title" style="color:#173404;">Quick win</div>
+      <div class="bs-desc" style="color:#27500A;">Builds momentum and demonstrates KM value. Essential before scaling to bigger initiatives.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleAttrs() {
+  const more = document.getElementById('more-attrs');
+  const btn = document.getElementById('expand-btn');
+  const isOpen = more.classList.contains('open');
+  more.classList.toggle('open');
+  btn.textContent = isOpen ? '+ Show all 25 attributes' : '- Show fewer attributes';
+}
+</script>
+</body>
+</html>
