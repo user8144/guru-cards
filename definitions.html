@@ -18,7 +18,6 @@
   .card { background: #ffffff; border: 0.5px solid rgba(0,0,0,0.1); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
   .section-label { font-size: 11px; font-weight: 500; color: #888780; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; padding-left: 2px; }
 
-  /* DEFINITION */
   .def-hero { font-size: 30px; font-weight: 500; color: #1a1a18; margin-bottom: 4px; }
   .def-plain { font-size: 14px; color: #5f5e5a; margin-bottom: 1.25rem; }
   .data-flow { display: flex; align-items: center; gap: 0; }
@@ -30,7 +29,6 @@
   .df-info { background: #EEEDFE; color: #3C3489; }
   .df-know { background: #E1F5EE; color: #085041; }
 
-  /* ATTRIBUTES */
   .attr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
   .attr-pill { background: #f5f4f0; border-radius: 8px; padding: 8px 10px; }
   .attr-name { font-size: 12px; font-weight: 500; color: #1a1a18; margin-bottom: 2px; }
@@ -40,7 +38,6 @@
   .hidden-attrs { display: none; }
   .hidden-attrs.open { display: contents; }
 
-  /* SECI */
   .seci-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .seci-box { border-radius: 10px; padding: 12px 14px; }
   .seci-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; display: inline-block; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px; }
@@ -48,7 +45,6 @@
   .seci-sub { font-size: 11px; margin-bottom: 7px; opacity: 0.75; }
   .seci-ex { font-size: 11px; opacity: 0.85; border-left: 2px solid; padding-left: 8px; line-height: 1.4; }
 
-  /* ROLES */
   .role-row { display: flex; align-items: stretch; gap: 10px; margin-bottom: 8px; }
   .role-spine { width: 24px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
   .role-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 12px; }
@@ -58,33 +54,28 @@
   .role-cert { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 8px; margin-left: 5px; vertical-align: middle; }
   .role-desc { font-size: 11px; color: #5f5e5a; margin-top: 3px; line-height: 1.4; }
 
-  /* CHANGE MGMT */
   .cm-def { font-size: 13px; color: #1a1a18; line-height: 1.6; border-left: 3px solid #534AB7; padding-left: 12px; margin-bottom: 1rem; }
   .cm-pills { display: flex; flex-wrap: wrap; gap: 8px; }
   .cm-pill { background: #EEEDFE; color: #3C3489; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
 
-  /* BULLS & SQUIRRELS */
   .bs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .bs-box { border-radius: 10px; padding: 14px; }
   .bs-label { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
   .bs-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
   .bs-desc { font-size: 12px; line-height: 1.5; }
 
-  /* KM DEFINITION */
   .km-split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
   .km-type { border-radius: 10px; padding: 12px; }
   .km-type-label { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 4px; }
   .km-type-desc { font-size: 12px; line-height: 1.4; }
-  .km-wiifm { margin-top: 0.5rem; }
-  .km-wiifm-label { font-size: 11px; font-weight: 600; color: #888780; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .wiifm-label { font-size: 11px; font-weight: 600; color: #888780; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
   .wiifm-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
   .wiifm-who { font-size: 11px; font-weight: 600; background: #f5f4f0; border-radius: 6px; padding: 3px 8px; white-space: nowrap; color: #5f5e5a; margin-top: 1px; }
   .wiifm-what { font-size: 12px; color: #1a1a18; line-height: 1.4; }
 
-  /* MATURITY */
   .mat-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   .mat-num { width: 28px; height: 28px; border-radius: 50%; background: #EEEDFE; color: #534AB7; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .mat-text { font-size: 13px; color: #1a1a18; }
+  .mat-text { font-size: 13px; color: #1a1a18; font-weight: 500; }
   .mat-sub { font-size: 11px; color: #888780; }
 </style>
 </head>
@@ -92,7 +83,6 @@
 
 <h1>KM Guru Cards — Theme 1</h1>
 
-<!-- KNOWLEDGE DEFINITION -->
 <div class="section-label">Definition</div>
 <div class="card">
   <div class="def-hero">Knowledge</div>
@@ -106,7 +96,6 @@
   </div>
 </div>
 
-<!-- KNOWLEDGE ATTRIBUTES -->
 <div class="section-label">Knowledge attributes — 25 total</div>
 <div class="card">
   <div class="attr-grid">
@@ -130,7 +119,6 @@
       <div class="attr-pill"><div class="attr-name">Measurability</div><div class="attr-desc">Amount, quality, cost metrics</div></div>
       <div class="attr-pill"><div class="attr-name">Practicality</div><div class="attr-desc">Speed, accuracy, satisfaction</div></div>
       <div class="attr-pill"><div class="attr-name">Proficiency</div><div class="attr-desc">Level of expertise</div></div>
-      <div class="attr-pill"><div class="attr-name">Relevance</div><div class="attr-desc">No irrelevant knowledge = no overload</div></div>
       <div class="attr-pill"><div class="attr-name">Stocks</div><div class="attr-desc">Inventory of knowledge</div></div>
       <div class="attr-pill"><div class="attr-name">States</div><div class="attr-desc">Data to decision, data to wisdom</div></div>
       <div class="attr-pill"><div class="attr-name">Source</div><div class="attr-desc">Origin — validate or seek clarity</div></div>
@@ -142,7 +130,6 @@
   <button class="expand-btn" id="expand-btn" onclick="toggleAttrs()">+ Show all 25 attributes</button>
 </div>
 
-<!-- KM DEFINITION -->
 <div class="section-label">Knowledge management</div>
 <div class="card">
   <div class="km-split">
@@ -155,20 +142,17 @@
       <div class="km-type-desc" style="color:#085041;">In employees' minds. Experiential. Learned by doing.</div>
     </div>
   </div>
-  <div class="km-wiifm">
-    <div class="km-wiifm-label">WIIFM — who's asking?</div>
-    <div class="wiifm-row">
-      <div class="wiifm-who">CEO</div>
-      <div class="wiifm-what">Strategic org-wide initiative. Improves performance and the bottom line.</div>
-    </div>
-    <div class="wiifm-row">
-      <div class="wiifm-who">Employee</div>
-      <div class="wiifm-what">Makes life easier. Reduces inefficiencies, frees up time, lets them focus on their core role.</div>
-    </div>
+  <div class="wiifm-label">WIIFM — who's asking?</div>
+  <div class="wiifm-row">
+    <div class="wiifm-who">CEO</div>
+    <div class="wiifm-what">Strategic org-wide initiative. Improves performance and the bottom line.</div>
+  </div>
+  <div class="wiifm-row">
+    <div class="wiifm-who">Employee</div>
+    <div class="wiifm-what">Makes life easier. Reduces inefficiencies, frees up time, lets them focus on their core role.</div>
   </div>
 </div>
 
-<!-- CHANGE MANAGEMENT -->
 <div class="section-label">Change management</div>
 <div class="card">
   <div class="cm-def">Deliberate process of building org readiness, awareness, and cultural buy-in through small quick wins before scaling — ensuring people are prepared to adopt new ways of working before significant resources are committed.</div>
@@ -180,7 +164,6 @@
   </div>
 </div>
 
-<!-- SECI MODEL -->
 <div class="section-label">SECI model — knowledge conversion</div>
 <div class="card">
   <div class="seci-grid">
@@ -211,7 +194,6 @@
   </div>
 </div>
 
-<!-- MATURITY MODELS -->
 <div class="section-label">Maturity models</div>
 <div class="card">
   <div style="font-size:13px;color:#5f5e5a;margin-bottom:1rem;">Ways to measure org growth and transformation — ensuring ongoing improvement. KM is an ongoing, maturity-driven process.</div>
@@ -222,7 +204,6 @@
   <div class="mat-row"><div class="mat-num">5</div><div><div class="mat-text">Optimizing</div><div class="mat-sub">KM embedded in culture. Strategic competitive advantage.</div></div></div>
 </div>
 
-<!-- KM ROLES -->
 <div class="section-label">KM roles — from worker to CKO</div>
 <div class="card">
   <div class="role-row">
@@ -251,7 +232,6 @@
   </div>
 </div>
 
-<!-- BULLS & SQUIRRELS -->
 <div class="section-label">Bulls vs squirrels</div>
 <div class="card">
   <div class="bs-grid">
