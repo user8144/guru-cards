@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KM Principles</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f4f0;
+    color: #1a1a18;
+    padding: 1.5rem 1rem;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .card { background: #ffffff; border: 1px solid #e0deda; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+  .section-label { font-size: 11px; font-weight: 600; color: #5f5e5a; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .lead { font-size: 13px; color: #5f5e5a; line-height: 1.5; margin-bottom: 1.25rem; border-left: 3px solid #e0deda; padding-left: 10px; }
+
+  .principles { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.25rem; }
+  .p-item { border-radius: 10px; overflow: hidden; }
+  .p-header { display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer; user-select: none; }
+  .p-num { width: 26px; height: 26px; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .p-title { font-size: 13px; font-weight: 700; flex: 1; }
+  .p-chevron { font-size: 11px; transition: transform 0.2s; flex-shrink: 0; }
+  .p-item.open .p-chevron { transform: rotate(180deg); }
+  .p-body { display: none; padding: 0 14px 12px 50px; font-size: 12px; line-height: 1.6; }
+  .p-item.open .p-body { display: block; }
+
+  /* Color palette cycling through 6 colors, 2 principles each */
+  .c1 { background: #EEEDFE; } .c1 .p-num { background: #CECBF6; color: #26215C; } .c1 .p-title { color: #26215C; } .c1 .p-chevron { color: #534AB7; } .c1 .p-body { color: #3C3489; }
+  .c2 { background: #E1F5EE; } .c2 .p-num { background: #9FE1CB; color: #04342C; } .c2 .p-title { color: #04342C; } .c2 .p-chevron { color: #0F6E56; } .c2 .p-body { color: #085041; }
+  .c3 { background: #FAEEDA; } .c3 .p-num { background: #FAC775; color: #412402; } .c3 .p-title { color: #412402; } .c3 .p-chevron { color: #854F0B; } .c3 .p-body { color: #633806; }
+  .c4 { background: #FAECE7; } .c4 .p-num { background: #F5C4B3; color: #4A1B0C; } .c4 .p-title { color: #4A1B0C; } .c4 .p-chevron { color: #A32D2D; } .c4 .p-body { color: #712B13; }
+  .c5 { background: #EAF3DE; } .c5 .p-num { background: #C0DD97; color: #173404; } .c5 .p-title { color: #173404; } .c5 .p-chevron { color: #3B6D11; } .c5 .p-body { color: #27500A; }
+  .c6 { background: #E6F1FB; } .c6 .p-num { background: #B5D4F4; color: #0C447C; } .c6 .p-title { color: #0C447C; } .c6 .p-chevron { color: #1A5E9E; } .c6 .p-body { color: #1A5E9E; }
+</style>
+</head>
+<body>
+
+<div class="section-label">KM Principles</div>
+<div class="card">
+  <div class="lead">12 principles that form the foundation for an agile, innovative org — fostering a culture of learning and unlocking the full potential of employees in the Knowledge Age.</div>
+
+  <div class="principles">
+
+    <div class="p-item c1" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">1</div>
+        <div class="p-title">Choice</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Giving individuals the freedom to choose their tasks increases motivation and fosters innovation. Passion-driven work leads to better engagement, creativity, and outcomes.</div>
+    </div>
+
+    <div class="p-item c2" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">2</div>
+        <div class="p-title">Throw Away the Box</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Focus on the ultimate objective, not a rigid framework. Instead of "get wheels," say "land safely." Broader goals unlock more creative, effective solutions.</div>
+    </div>
+
+    <div class="p-item c3" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">3</div>
+        <div class="p-title">Supply and Demand</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">KM fails when orgs assume they know what people need. Align resources with actual employee needs — user-driven, not top-down.</div>
+    </div>
+
+    <div class="p-item c4" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">4</div>
+        <div class="p-title">The Crapper Principle</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Don't build repositories for the sake of it. Every piece of knowledge captured should serve a clear purpose and be actionable. Avoid knowledge graveyards.</div>
+    </div>
+
+    <div class="p-item c5" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">5</div>
+        <div class="p-title">Teams and Teamwork</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Strong, well-organized teams are central to the Knowledge Age. They pool knowledge, foster innovation, and enable rapid adaptation to change.</div>
+    </div>
+
+    <div class="p-item c6" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">6</div>
+        <div class="p-title">Specialization</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">As tasks grow more complex, deep expertise beats generalism. Focused specialization leads to higher-quality outcomes and greater efficiency.</div>
+    </div>
+
+    <div class="p-item c1" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">7</div>
+        <div class="p-title">Personal Knowledge Management (PKM)</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Org success depends on individuals managing their own knowledge. PKM encourages ownership of personal development — staying engaged and contributing fully.</div>
+    </div>
+
+    <div class="p-item c2" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">8</div>
+        <div class="p-title">Knowledge Is Messy and Self-Organizing</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">You can't isolate knowledge neatly. But given the right environment, it organizes naturally around a group's identity and purpose. Remove the barriers and let it structure itself.</div>
+    </div>
+
+    <div class="p-item c3" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">9</div>
+        <div class="p-title">Knowledge Seeks Community</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Knowledge happens best in community and travels via shared language. Build environments where people connect, and invest in the language that makes knowledge flow.</div>
+    </div>
+
+    <div class="p-item c4" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">10</div>
+        <div class="p-title">Looser Is Better</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">The tighter you control knowledge, the more it slips away. Adaptable systems survive longer. Capture what matters — but don't over-engineer. Rigid control wastes significant resources.</div>
+    </div>
+
+    <div class="p-item c5" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">11</div>
+        <div class="p-title">There Is No One Solution</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">No silver bullet. Knowledge is always changing. The best approach keeps things moving while keeping options open. Start with the right definition and support it at multiple levels.</div>
+    </div>
+
+    <div class="p-item c6" onclick="toggle(this)">
+      <div class="p-header">
+        <div class="p-num">12</div>
+        <div class="p-title">Knowledge Has a Lifecycle</div>
+        <div class="p-chevron">▼</div>
+      </div>
+      <div class="p-body">Knowledge doesn't grow forever — it becomes irrelevant, dies, or gets lost. Unlearning and retiring outdated knowledge is just as important as capturing new knowledge.</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggle(item) {
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
